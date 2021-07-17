@@ -4,7 +4,7 @@ import csv
 import os
 
 # Add a variable to load a file from a path.
-file_to_load = os.path.join( "Resources", "election_results.csv")
+file_to_load = os.path.join("Resources", "election_results.csv")
 # Add a variable to save the file to a path.
 file_to_save = os.path.join("analysis", "election_analysis.txt")
 
@@ -28,7 +28,6 @@ winning_percentage = 0
 # 2: Track the largest county and county voter turnout and county percentage.
 largest_county = ""
 largest_county_votes = 0
-county_percentage = 0
 
 # Read the csv and convert it into a list of dictionaries
 with open(file_to_load) as election_data:
@@ -108,10 +107,9 @@ with open(file_to_save, "w") as txt_file:
         txt_file.write(county_results)
 
          # 6f: Write an if statement to determine the winning county and get its vote count.
-        if (c_votes > largest_county_votes) and (c_vote_percentage > county_percentage):
+        if (c_votes > largest_county_votes):
             largest_county_votes = c_votes
             largest_county = county_name
-            county_percentage = c_vote_percentage
 
     # 7: Print the county with the largest turnout to the terminal.
             county_vote_summary = (
