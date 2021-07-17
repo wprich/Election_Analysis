@@ -1,6 +1,4 @@
 # -*- coding: UTF-8 -*-
-"""PyPoll Homework Challenge Solution."""
-
 # Add our dependencies.
 import csv
 import os
@@ -27,7 +25,7 @@ winning_candidate = ""
 winning_count = 0
 winning_percentage = 0
 
-# 2: Track the largest county and county voter turnout.
+# 2: Track the largest county and county voter turnout and county percentage.
 largest_county = ""
 largest_county_votes = 0
 county_percentage = 0
@@ -94,16 +92,21 @@ with open(file_to_save, "w") as txt_file:
 
     # 6a: Write a for loop to get the county from the county dictionary.
     for county_name in county_votes:
+
         # 6b: Retrieve the county vote count.
         c_votes = county_votes.get(county_name)
+
         # 6c: Calculate the percentage of votes for the county.
         c_vote_percentage = float(c_votes) / float(total_votes) * 100
         county_results  = (
             f"{county_name}: {c_vote_percentage:.1f}% ({c_votes:,})\n")
+
          # 6d: Print the county results to the terminal.
         print(county_results)
+
          # 6e: Save the county votes to a text file.
         txt_file.write(county_results)
+        
          # 6f: Write an if statement to determine the winning county and get its vote count.
         if (c_votes > largest_county_votes) and (c_vote_percentage > county_percentage):
             largest_county_votes = c_votes
