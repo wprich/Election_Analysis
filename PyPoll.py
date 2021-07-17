@@ -50,7 +50,7 @@ for candidate_name in candidate_votes:
     # 3. Calculate the percentage of votes.
     vote_percentage = float(votes) / float(total_votes) * 100
     # 4. Print the candidate name and percentage of votes.
-    print(f"{candidate_name}: received {vote_percentage:.2f}% of the vote.")
+    print(f"{candidate_name}: received {vote_percentage:.1f}% of the vote.")
 
     # Write some data to the file.
     #txt_file.write("Counties in the Election\n")
